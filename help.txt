@@ -1,0 +1,139 @@
+____________________________________________________
+           _______   _____      _       _ 
+          (__   __) |  ___)    /\\     / |
+             | |    | |__     /  \\    | |
+             | |    |  __)   / /\ \\   |_/
+             | | _  | |__   / /__\ \\   _ 
+             |_||_| |_____)/________\\ |_|
+____________________________________________________
+             Help for T.ED! - text editor
+created by Artem Bondar through some unsleepy nights
+                  in September 2016
+____________________________________________________
+                 available commands
+____________________________________________________
+arguments types:
+T - string term, no " or """ on beginning or ending
+S - single or multiple string, must contain " or """
+N - number
+  - nothing
+
+set tab width [N]
+        sets new tab width in [N] spaces
+set wrap [T]
+    [T] = yes
+        lines are continuing beyond screen width
+    [T] = no
+        lines are truncated, full line is showed
+set name
+        delete association with file
+    [S] override association with file to [S]
+print all
+        prints entire text
+print pages
+        runs interactive text showing,
+        while in next keys can be used:
+    [space]
+        shows next screen
+    [enter]
+        shows previous screen
+    [<][>]
+        navigation via text, left/right
+    [q] quit interactive mode
+print range
+        prints entire text
+    [N] prints entire text starting from [N] line
+    [N1][N2]
+        prints text from [N1] to [N2] line
+        valid range: 1 - text last line number
+print line [N]
+        prints [N] line
+edit string [N1][N2][T]
+        replace symbol with symbol [T] in line [N1]
+        on position [N2]
+insert after [S]
+        inserts string [S] to the end of text
+    [N][S]
+        inserts string [S] after [N] line
+        or to start of file if [N] = 0
+insert symbol [N1][N2][T]
+        insert symbol [T] in line [N1]
+        after position [N2]
+replace substring [S1][S2]
+        replaces [S1] with [S2]
+    [N][S1][S2]
+        replaces [S1] with [S2]
+        starting from [N] line
+    [N1][N2][S1][S2]
+        replaces [S1] with [S2]
+        in range from [N1] to [N2] line
+
+    [S1] = ^
+        adds [S2] to start of line(s)
+    [S1] = $
+        adds [S2] to   end of line(s)
+delete line [N]
+        deletes [N] line
+delete range [N]
+        deletes all lines starting from [N] line
+    [N1][N2]
+        deletes all lines from [N1] to [N2] line
+delete braces
+        deletes all text inside braces
+    [N] deletes all text inside braces
+        starting from [N] line
+    [N1][N2]
+        deletes all text inside braces
+        from [N1] to [N2] line
+read [S]
+        tries to read [S] file
+    [T] = force [S]
+        override current file without saving
+
+        file assosiation isn't set
+open [S]
+        tries to read [S] file
+    [T] = force [S]
+        override current file without saving
+
+        file assosiation is set with [S]
+write
+        tries to save file on assosiation
+    [S] if assosiation isn't set, set it with [S]
+help
+        shows this file if it's in the directory
+exit
+        tries to exit
+    [T] = force
+        exits without saving
+____________________________________________________
+                      Also
+____________________________________________________
+Supports stdout to file, however colors escape-codes
+are also written.
+
+Possible support for stdin from file, currently is
+unavailable to launch, but can be implemented
+
+Better use white/black terminal profile from start,
+not all terminals can start coloring all the
+background properly, however sometimes 2nd launch
+helps to fix it.
+
+Full unicode read/write support, however sometimes
+symbols can't be properly showed in terminal stdout
+because maintains two and more bytes, while shifts
+and amount of text to show are calculated for one.
+____________________________________________________
+                   Statistics
+____________________________________________________
+
+        Current version:     1.0.3.1
+        Development time:    16 days Sep 19 - Oct 03
+        Total lines amount:  2755
+        Total source lines:  2443
+        Total headers lines: 312
+        Functions written:   57
+        Enums used:          95
+        Defines used:        28
+____________________________________________________
