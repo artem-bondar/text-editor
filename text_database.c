@@ -148,7 +148,7 @@ errors_global edit_line(Text *text, const unsigned int line_number, const unsign
 	Line *line;
 	iterate_line_pointer(text, &line, line_number);
 	string_length = strlen(line->content);
-	if (!position || position > string_length || (position >= string_length && line->content[string_length - 1]) == '\n')
+	if (!position || position > string_length || (position >= string_length && line->content[string_length - 1] == '\n'))
 		return INVALID_POSITION_IN_LINE;
 	line->content[position - 1] = replace_symbol;
 	return NO_ERROR;

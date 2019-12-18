@@ -5,7 +5,7 @@
  * author Artem Bondar (c) 2016
  */
 
-#define _BSD_SOURCE /* usleep() macro requirement for glibc */
+#define _DEFAULT_SOURCE /* usleep() macro requirement for glibc */
 
 #include <unistd.h>
 
