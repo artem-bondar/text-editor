@@ -1,7 +1,3 @@
-#
-# Вообщето здессь даже можно писать коментарии
-#
-
 CC = gcc
 CFLAGS = -g -Wall -ansi -pedantic
 OBJS = editor.o\
@@ -22,5 +18,5 @@ ted: $(OBJS)
 	$(CC) -c $(CFLAGS) $<
 
 clean:
-	rm -f $(OBJS) $(BINARIES) *.h.gch
+	rm -f $(OBJS) $(BINARIES)
 
